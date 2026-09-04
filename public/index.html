@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wish Track - From Wishlist to Graduation</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            crisp: '#F8FAFC',      /* 60% Primary Crisp White Background */
+            navy: '#0F172A',       /* 30% Secondary Navy Blue Containers/Text */
+            navyLight: '#1E293B',
+            crimson: '#DC2626',    /* 10% Accent Crimson Red Highlights */
+            crimsonHover: '#B91C1C',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- React & Babel CDNs -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body class="bg-crisp text-navy min-h-screen font-sans selection:bg-crimson selection:text-white">
+  <div id="root"></div>
+
+  <!-- 1. Load Modular Components First -->
+  <script type="text/babel" src="/components/AuthScreen.jsx"></script>
+  <script type="text/babel" src="/components/Header.jsx"></script>
+  <script type="text/babel" src="/components/Onboarding.jsx"></script>
+  <script type="text/babel" src="/components/Wishlist.jsx"></script>
+  
+  <!-- 2. Load Main Application Logic Last -->
+  <script type="text/babel" src="/App.jsx"></script>
+  <script type="text/babel" src="/components/AdminPanel.jsx"></script>
+</body>
+</html>
